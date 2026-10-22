@@ -1,0 +1,196 @@
+
+## Q001. What is Cloud Computing?
+
+### 1. Understand It from Zero
+
+Imagine you want to start a website.
+
+Your website needs a computer to run its code, storage to save its files, and a database to store information about users.
+
+You have two choices:
+
+**Option 1: Buy and manage your own servers**
+
+You purchase physical computers, keep them in a suitable location, provide electricity and cooling, configure networking, and maintain the hardware.
+
+**Option 2: Use Cloud Computing**
+
+You rent computing resources from a cloud provider such as AWS. You can create servers, databases, storage, and networks through a web console, command-line tools, or APIs without purchasing the underlying physical hardware yourself.
+
+**Cloud computing means using computing resources over a network, usually the internet, whenever you need them, instead of having to own and maintain all the underlying infrastructure yourself.**
+
+### 2. Interview-Ready Answer
+
+Cloud computing is the on-demand delivery of computing resources such as servers, storage, databases, networking, and software over the internet, usually on a pay-as-you-go basis.
+
+Instead of purchasing and maintaining physical servers, organizations can use cloud providers such as Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP).
+
+Cloud computing provides benefits such as scalability, flexibility, faster deployment, and reduced upfront infrastructure costs.
+
+For example, I can launch an EC2 instance on AWS to host an application, use Amazon S3 to store files, and use Amazon RDS to manage a relational database. I can increase or decrease resources according to the application's requirements.
+
+### 3. Diagram: How Cloud Computing Works
+
+```mermaid
+flowchart TD
+    A[Developer or Business] --> B[Internet]
+    B --> C[Cloud Provider - AWS]
+    C --> D[Compute - EC2]
+    C --> E[Storage - S3]
+    C --> F[Database - RDS]
+    D --> G[Application Runs]
+    E --> H[Files Stored]
+    F --> I[Application Data Stored]
+```
+
+**Understand the diagram:**
+
+1. A developer or business needs resources to run an application.
+2. The user connects to AWS through the internet or AWS management tools.
+3. AWS provides the required resources.
+4. EC2 runs the application, S3 stores files, and RDS stores structured database information.
+
+Note: Cloud resources are hosted in the provider's infrastructure. Some services can also be accessed privately through configured networks rather than being exposed directly to the public internet.
+
+### 4. Real-World DevOps Example
+
+Suppose a company launches an e-commerce website.
+
+The application needs to run continuously, store product images, and maintain customer and order information.
+
+A DevOps engineer can use AWS as follows:
+
+| Requirement | AWS Service | Purpose |
+|---|---|---|
+| Run the application | Amazon EC2 | Provides virtual servers |
+| Store product images | Amazon S3 | Stores files and objects |
+| Store customer and order data | Amazon RDS | Provides a managed relational database |
+| Monitor server metrics | Amazon CloudWatch | Collects metrics, logs, and alarms |
+| Handle incoming application traffic | Elastic Load Balancing | Distributes traffic across configured targets |
+
+**What happens when traffic increases?**
+
+The company can add more application servers or configure Auto Scaling to adjust capacity based on defined policies. This helps the application handle changing demand without requiring the company to purchase physical servers in advance.
+
+Cloud computing does not automatically make every application scalable or highly available. The architecture must be designed and configured to achieve those goals.
+
+### 5. Traditional Infrastructure vs Cloud Computing
+
+| Traditional Infrastructure | Cloud Computing |
+|---|---|
+| Purchase physical servers | Provision cloud resources |
+| Higher upfront hardware investment | Often lower upfront investment |
+| Hardware capacity can take time to expand | Resources can often be provisioned quickly |
+| Organization maintains its hardware | Provider maintains the underlying physical infrastructure |
+| Capacity planning is essential | Capacity planning still matters, but resources can be adjusted more easily |
+| Hardware maintenance is the organization's responsibility | Responsibilities are divided between provider and customer |
+
+**Important:** Cloud computing is not necessarily cheaper in every situation. Costs depend on resource usage, architecture, pricing, and operational requirements.
+
+### 6. Key Characteristics of Cloud Computing
+
+**1. On-demand self-service**
+
+Users can provision resources when needed without manually asking the cloud provider to install new hardware.
+
+Example: Launching an EC2 instance from the AWS Console.
+
+**2. Broad network access**
+
+Cloud services can be accessed over networks using supported devices, interfaces, and protocols.
+
+Example: Managing AWS resources from a laptop using the AWS Console or AWS CLI.
+
+**3. Resource pooling**
+
+A cloud provider uses shared physical infrastructure to serve multiple customers while logically isolating their resources.
+
+Example: Different AWS customers use the provider's infrastructure without directly sharing access to one another's data.
+
+**4. Rapid elasticity**
+
+Resources can be increased or decreased as demand changes.
+
+Example: An Auto Scaling group adds EC2 instances when configured scaling conditions are met.
+
+**5. Measured service**
+
+Resource consumption can be monitored and billed according to the applicable pricing model.
+
+Example: EC2 usage, storage consumption, and data transfer can contribute to an AWS bill.
+
+### 7. Cloud Service Models
+
+**IaaS — Infrastructure as a Service**
+
+Provides infrastructure building blocks such as virtual machines, networking, and storage. The customer manages much of the operating system and application stack.
+
+Example: Amazon EC2.
+
+**PaaS — Platform as a Service**
+
+Provides a managed platform for deploying applications while reducing the need to manage the underlying infrastructure.
+
+Example: AWS Elastic Beanstalk, which manages application deployment and associated infrastructure components.
+
+**SaaS — Software as a Service**
+
+Provides a ready-to-use application, usually accessed through a browser or client.
+
+Example: Salesforce.
+
+A useful way to remember the difference:
+
+- IaaS: You manage more of the software stack.
+- PaaS: You focus more on building and deploying the application.
+- SaaS: You primarily use the finished application.
+
+These categories are simplified models. Actual management responsibilities vary by service.
+
+### 8. Common Interview Mistakes
+
+- **Mistake:** Cloud computing means free computing.
+  **Correction:** Most cloud resources incur charges. Free-tier benefits have eligibility limits, usage limits, and conditions.
+
+- **Mistake:** Cloud computing means there are no physical servers.
+  **Correction:** Physical servers still exist; the cloud provider operates the underlying infrastructure.
+
+- **Mistake:** Moving an application to the cloud automatically makes it highly available.
+  **Correction:** High availability depends on architecture, redundancy, failure handling, and configuration.
+
+- **Mistake:** The cloud provider manages everything.
+  **Correction:** Responsibilities are shared. Customers remain responsible for aspects such as access permissions, data protection, and application configuration, depending on the service.
+
+### 9. Quick Revision
+
+**Cloud computing = On-demand computing resources + Network access + Flexible capacity + Usage-based pricing models.**
+
+Remember these three points:
+
+1. You can use computing resources without purchasing all the physical hardware yourself.
+2. You can provision and adjust many resources as your needs change.
+3. You remain responsible for using and configuring cloud services correctly.
+
+### 10. Follow-Up Interview Questions
+
+**Q1. What is the difference between cloud computing and virtualization?**
+
+Virtualization allows one physical machine to run multiple isolated virtual machines. Cloud computing delivers resources as services, often using virtualization along with automation, networking, metering, and management systems. Cloud computing can also use technologies other than traditional virtual machines.
+
+**Q2. Is AWS the same as cloud computing?**
+
+No. Cloud computing is the general concept. AWS is one cloud provider that offers many cloud computing services.
+
+**Q3. Does cloud computing always reduce costs?**
+
+No. It can reduce upfront infrastructure investment and improve resource flexibility, but poorly managed resources, excessive data transfer, and overprovisioning can make cloud usage expensive.
+
+**Q4. What is the difference between scalability and elasticity?**
+
+Scalability is the ability to increase or decrease system capacity to meet requirements. Elasticity is the ability to adjust resources dynamically as demand changes.
+
+**Q5. What is the shared responsibility model?**
+
+It describes how security responsibilities are divided between the cloud provider and the customer. AWS is responsible for security of the cloud, while customers are responsible for security in the cloud according to the services they use.
+
+---
